@@ -25,7 +25,7 @@ int main(void) {
     int dem = 0;
 
     for (int i = 0; i < n; i++) {
-        double d2 = x[i]*x[i] + y[i]*y[i];
+        double d2 = pow(x[i],2) + pow(y[i],2);
         if (d2 < R*R) {
             dem++;
             printf("Diem trong duong tron: (%.2f, %.2f)\n", x[i], y[i]);
@@ -34,13 +34,11 @@ int main(void) {
     printf("So diem nam trong: %d\n", dem);
     double Rmin2 = 0;
     for (int i = 0; i < n; i++) {
-        double d2 = x[i]*x[i] + y[i]*y[i];
+        double d2 = pow(x[i],2) + pow(y[i],2);
         if (d2 > Rmin2) Rmin2 = d2;
     }
     double Rmin = sqrt(Rmin2);
-    printf("Ban kinh nho nhat (tam O) chua tat ca diem: %.2f\n", Rmin);
-
-    
+    printf("Ban kinh nho nhat chua tat ca diem: %.2f\n", Rmin);
 
     return 0;
 }
